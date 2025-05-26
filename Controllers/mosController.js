@@ -86,7 +86,7 @@ const createMos = async (req, res) => {
 const logMos = async (req, res) => {
     const {comm_email, comm_password} = req.body
 
-    const mos = await Mos.findOne({ comm_email })
+    const mos = await Mos.findOne({ email: comm_email })
 
     if(!mos){
         res.status(400).json({error: "البريد الالكتروني خاطئ"})
