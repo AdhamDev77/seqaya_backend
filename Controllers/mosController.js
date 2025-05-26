@@ -43,12 +43,12 @@ const createMos = async (req, res) => {
 
 
       // Validate email format
-    if (!validator.isEmail(email)) {
+    if (!validator.isEmail(comm_email)) {
         return res.status(400).json({ error: "البريد الالكتروني خاطئ" });
         }
 
       // Check for existing user
-    const exists = await Mos.findOne({ email });
+    const exists = await Mos.findOne({ comm_email });
     if (exists) {
         return res.status(400).json({ error: "البريد الالكتروني مستخدم" });
     }
@@ -59,7 +59,7 @@ const createMos = async (req, res) => {
 
       // Hash password
     const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(password, salt);
+    const hash = await bcrypt.hash(comm_password, salt);
 
       // Create user
     const mos = await Mos.create({
