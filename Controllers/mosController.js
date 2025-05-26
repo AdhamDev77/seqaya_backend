@@ -91,7 +91,7 @@ const logMos = async (req, res) => {
     if(!mos){
         res.status(400).json({error: "البريد الالكتروني خاطئ"})
     }else{
-        const token = createToken(user._id)
+        const token = createToken(mos._id)
         const match = await bcrypt.compare(comm_password, mos.comm_password)
         if(!match){
             res.status(404).json({error: "كلمة المرور الخاظئة"})
