@@ -13,10 +13,6 @@ const mosSchema = new Schema(
       required: true,
       unique: true,
     },
-    phone: {
-      type: String,
-      required: true,
-    },
     password: {
       type: String,
       required: true,
@@ -25,20 +21,16 @@ const mosSchema = new Schema(
       type: String,
       required: true,
     },
-    gender: {
-      type: String,
-      required: true,
-    },
     comm_id: {type: String, default: '68346a4ebc6a442971a8c112'},
     approved: { type: Boolean, default: true },
     admin: { type: Boolean, default: true },
     isMos: {
       type: Boolean,
-      required: true,
+      default: true,
     },
     isMosReq: {
       type: Boolean,
-      required: false,
+      default: false,
     },
     isMosOld: {
       type: Boolean,

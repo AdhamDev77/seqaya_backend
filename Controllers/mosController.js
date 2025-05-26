@@ -63,10 +63,10 @@ const createMos = async (req, res) => {
 
       // Create user
     const mos = await Mos.create({
-        comm_name,
-        comm_email,
-        comm_password: hash,
-        comm_dob,
+        name: comm_name,
+        email: comm_email,
+        password: hash,
+        dob: comm_dob,
     });
 
     comm.approvedMembers.push(mos._id);
