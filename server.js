@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 const usersRoutes = require('./routes/users')
+const mosRoutes = require('./routes/mos')
 const consRoutes = require('./routes/cons')
 const commRoutes = require('./routes/comm')
 const asarRoutes = require('./routes/asar')
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/users', usersRoutes)
+app.use('/api/mos', mosRoutes)
 app.use('/api/cons', consRoutes)
 app.use('/api/comm', commRoutes)
 app.use('/api/asar', asarRoutes)
